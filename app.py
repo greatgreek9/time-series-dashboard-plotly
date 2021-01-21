@@ -6,6 +6,14 @@ import dash_html_components as html
 import pandas as pd
 import plotly.express as px
 
+import numpy as np
+import json
+
+from datetime import datetime
+from keras.models import load_model
+
+model = load_model('my_time_series_model.h5')
+
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
 df = pd.read_csv('data/AAPL.csv', parse_dates=True)
