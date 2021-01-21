@@ -8,7 +8,7 @@ import plotly.express as px
 
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
-df = pd.read_csv('data/stockdata2.csv', index_col=0, parse_dates=True)
+df = pd.read_csv('data/AAPL.csv', parse_dates=True)
 
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 
@@ -31,8 +31,7 @@ app.layout = html.Div(children=[
           animate=True,
           figure=px.line(df,
                          x='Date',
-                         y='value',
-                         color='stock',
+                         y='Close',
                          template='plotly_dark').update_layout(
                                    {'plot_bgcolor': 'rgba(0, 0, 0, 0)',
                                     'paper_bgcolor': 'rgba(0, 0, 0, 0)'})
